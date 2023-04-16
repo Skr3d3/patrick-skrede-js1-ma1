@@ -30,7 +30,7 @@ const cats = [
 // Question 4
     heading.className = "subheading";
 
-// Question 5
+// Question 5 (Added and commented out other types of for loops)
     const paragraphs = document.querySelectorAll("p");
 
     for (let paragraph of paragraphs) {
@@ -61,7 +61,7 @@ function logNames(list) {
 };
 logNames(cats);
 
-// Question 8
+// Question 8 (Added and commented out other types of for loops)
 
 function createCats(cats) {
 
@@ -69,7 +69,22 @@ function createCats(cats) {
 
     let catInfo = "";
 
-    for (let i = 0; i < cats.length; i++) {
+for (let cat of cats) {
+    if (cat.age) {
+        age = cat.age
+    }
+    else {age = "Age unknown"}
+
+    catInfo += `
+    <div>
+    <h5>${cat.name}</h5>
+    <p>${age}</p>
+    </div>`
+};
+return catInfo;
+};
+
+/*    for (let i = 0; i < cats.length; i++) {
         if (cats[i].age) {
             age = cats[i].age;
         }
@@ -81,8 +96,7 @@ function createCats(cats) {
         <p>${age}</p>
         </div>`
     }
-return catInfo;
-};
+*/
 
 const catContainer = document.querySelector(".cat-container")
 catContainer.innerHTML = createCats(cats);
