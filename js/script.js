@@ -65,24 +65,24 @@ logNames(cats);
 
 function createCats(cats) {
 
-    let html = "";
+    console.log(cats);
+
+    let catInfo = "";
 
     for (let i = 0; i < cats.length; i++) {
-        let catsAge
         if (cats[i].age) {
-            catsAge = cats[i].age;
+            age = cats[i].age;
         }
-        else {catsAge = "Age unknown"};
+        else {age = "Age unknown"};
 
-        html += `
+        catInfo += `
         <div>
         <h5>${cats[i].name}</h5>
-        <p>${catsAge}</p>
+        <p>${age}</p>
         </div>`
     }
-return html;
+return catInfo;
 };
-
 
 const catContainer = document.querySelector(".cat-container")
 catContainer.innerHTML = createCats(cats);
